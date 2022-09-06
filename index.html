@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js" defer></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Library</title>
+</head>
+
+<body>
+    <lottie-player src="img/book.json" background="transparent" speed="2"  style="width: 300px; height: 300px; pointer-events: none;" autoplay></lottie-player>
+
+    <div class="module">
+        <div class="module-inside">
+            <div class="header">
+                <h1>library</h1>
+                <button onclick="onClickCreateBook()">Create Book</button>
+            </div>
+            <div class="container">
+
+                <div data-id="0" class="book">
+                    <p>Test Text</p>
+                    <button onclick="onClickMarkAsRead()">Mark as Read</button>
+                    <button onclick="onClickDeleteBook(this)">Delete Book</button>
+                </div>
+        
+            </div>
+            <div class="create-form-bg">
+                <div class="create-form">
+                    <form id="book-form">
+                        <fieldset>
+                            <legend>Add New Book</legend>
+                            <label for="book-title">Book Title</label>
+                            <input type="text" name="title" id="book-title" required>
+                            <label for="author">Author</label>
+                            <input type="text" name="author" id="author" required>
+                            <label for="page-number">Number of Pages</label>
+                            <input type="number" min="1" name="pages" id="page-number" required>
+                            <label for="read">Already Read</label>
+                            <input type="checkbox" name="read" id="read">
+                        </fieldset>
+                    </form>
+                    <button onclick="onClickAddBook()">Add Book</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+</body>
+
+</html>
