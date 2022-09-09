@@ -1,19 +1,35 @@
 let library = [];
 
-function Book(title, author, pages, read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read    
-    this.info = function(){
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+    info = () => {
         return `${this.title}, ${this.author}, ${this.pages} pages, ${(this.read ? 'already read.' : 'hasn\'t been read.')}`
+    }
+    addBookToLibrary = () => {
+        library.push(this)
+        displayBooks()
     }
 }
 
-Book.prototype.addBookToLibrary = function() {
-    library.push(this)
-    displayBooks()
-}
+// function Book(title, author, pages, read){
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     this.read = read    
+//     this.info = function(){
+//         return `${this.title}, ${this.author}, ${this.pages} pages, ${(this.read ? 'already read.' : 'hasn\'t been read.')}`
+//     }
+// }
+
+// Book.prototype.addBookToLibrary = () => {
+//     library.push(this)
+//     displayBooks()
+// }
 
 function clearBooks(){
     const books = document.querySelectorAll('.container > .book')
